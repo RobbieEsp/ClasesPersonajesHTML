@@ -1,0 +1,196 @@
+/* =========================================
+   ESTILOS GENERALES Y MAQUETACIÓN DE PÁGINA
+   ========================================= */
+
+/* Estilos extraídos del <body> */
+body {
+    font-family: 'Times New Roman', Georgia, serif;
+    max-width: 800px;
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 20px;
+    background-color: #FAF0E6; /* Color beige claro */
+}
+
+/* Estilos de la cabecera (h1) */
+.chapter-header {
+    text-align: center;
+    border-bottom: 2px solid #333;
+    margin-bottom: 15px;
+}
+
+/* Estilos del h1 */
+.chapter-header h1 {
+    font-family: 'Times New Roman', Georgia, serif;
+    font-size: 36pt;
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #800000; /* Guinda */
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Estilos del párrafo introductorio */
+.intro-paragraph {
+    text-indent: 1.5em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   MAQUETACIÓN DE DOS COLUMNAS (Usando float para posicionamiento)
+   ========================================= */
+
+/* Contenedor principal para las dos columnas de clases */
+.main-content-columns::after {
+    content: "";
+    display: table;
+    clear: both; /* Limpiar flotantes para que el formulario se coloque debajo */
+}
+
+/* Estilos para la Columna Izquierda y Derecha (ancho 50% y flotando) */
+.column-left,
+.column-right {
+    width: 50%;
+    float: left; /* Posicionamiento flotante para las dos columnas */
+    box-sizing: border-box; /* Incluir padding en el ancho total */
+    padding-bottom: 10px;
+}
+
+.column-left {
+    padding-right: 15px; /* Espacio entre las dos columnas */
+}
+
+.column-right {
+    padding-left: 15px; /* Espacio entre las dos columnas */
+}
+
+
+/* =========================================
+   ESTILOS DE BLOQUE DE CLASE (Icono + Texto)
+   ========================================= */
+
+/* Contenedor para cada clase (usando Flexbox para alinear el icono con el texto) */
+.class-block {
+    margin-bottom: 20px;
+    display: flex; 
+    align-items: flex-start;
+}
+
+/* Contenedor del icono */
+.icon-container {
+    width: 40px; 
+    flex-shrink: 0;
+    margin-right: 10px;
+}
+
+.icon-container img {
+    display: block;
+    border: none;
+    width: 40px;
+    height: 40px;
+}
+
+/* TÍTULO DE CLASE (h3) */
+.class-text h3 {
+    font-size: 14pt;
+    font-weight: bold;
+    color: #800000; /* Guinda oscuro */
+    text-decoration: underline;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Párrafo de la descripción de la clase */
+.class-text p {
+    text-indent: 1.5em;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+/* Lista de subclases (ul) */
+.class-text ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.class-text ul li {
+    line-height: 1.3;
+    text-indent: -1.5em; /* Sangría negativa para el icono de la lista */
+    padding-left: 1.5em;
+    font-size: 11pt; /* Restaurar el tamaño de fuente de la lista */
+}
+
+.class-text ul li span {
+    font-weight: 600; /* Texto en negrita dentro de la lista */
+}
+
+
+/* =========================================
+   ESTILOS DEL FORMULARIO Y FOOTER
+   ========================================= */
+
+.separator {
+    margin-top: 20px;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.form-section {
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #800000;
+    background-color: #F8F8FF;
+    font-size: 11pt;
+}
+
+.form-section h2 {
+    color: #800000;
+    border-bottom: 1px solid #800000;
+    padding-bottom: 10px;
+    font-size: 20pt;
+    margin-top: 0;
+}
+
+.form-section label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-section input[type="text"],
+.form-section select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    box-sizing: border-box; 
+}
+
+.form-section button[type="submit"] {
+    background-color: #800000;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14pt;
+    width: 100%;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 10pt;
+    color: #555;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
