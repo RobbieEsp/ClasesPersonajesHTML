@@ -1,39 +1,35 @@
 /* =========================================
-   ESTILOS GLOBALES: USO DE UNIDADES RELATIVAS
+   ESTILOS GLOBALES: USO DE UNIDADES RELATIVAS (%, rem, vw)
    ========================================= */
 
 /* Estilos extraídos del <body> */
 body {
     font-family: 'Times New Roman', Georgia, serif;
-    /* Usar un ancho relativo y dejar margen horizontal para que respire */
-    max-width: 90%; /* Máximo ancho de 90% del viewport */
-    margin: 0 auto; /* Centrar el contenido */
-    padding: 2rem; /* Usar rem en lugar de px para padding */
-    background-color: #FAF0E6; /* Color beige claro */
-    font-size: 16px; /* Establecer una base de fuente para las unidades rem */
+    max-width: 90%; 
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #FAF0E6;
+    font-size: 16px;
 }
 
-/* Estilos de la cabecera (h1) */
 .chapter-header {
     text-align: center;
     border-bottom: 2px solid #333;
     margin-bottom: 1.5rem; 
 }
 
-/* Estilos del h1: Usar vw para que el tamaño de la fuente escale con el viewport */
 .chapter-header h1 {
     font-family: 'Times New Roman', Georgia, serif;
-    font-size: 5vw; /* Tamaño grande y relativo para escritorio/tablet */
+    font-size: 5vw;
     font-weight: 900;
     letter-spacing: 0.25rem;
-    color: #800000; /* Guinda */
+    color: #800000;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     line-height: 1.2;
 }
 
-/* Estilos del párrafo introductorio */
 .intro-paragraph {
     text-indent: 1.5rem;
     line-height: 1.5;
@@ -45,43 +41,40 @@ body {
    MAQUETACIÓN DE DOS COLUMNAS (ESCRITORIO)
    ========================================= */
 
-/* Contenedor principal para las dos columnas de clases */
+/* Limpiador de flotantes */
 .main-content-columns::after {
     content: "";
     display: table;
-    clear: both; /* Limpiar flotantes para que el formulario se coloque debajo */
+    clear: both;
 }
 
-/* Estilos para la Columna Izquierda y Derecha (ancho 50% y flotando) */
 .column-left,
 .column-right {
     width: 50%;
-    float: left; /* Posicionamiento flotante para las dos columnas */
+    float: left;
     box-sizing: border-box; 
     padding-bottom: 1rem;
 }
 
 .column-left {
-    padding-right: 1rem; /* Espacio entre las dos columnas */
+    padding-right: 1rem;
 }
 
 .column-right {
-    padding-left: 1rem; /* Espacio entre las dos columnas */
+    padding-left: 1rem;
 }
 
 
 /* =========================================
-   ESTILOS DE BLOQUE DE CLASE (Contenido)
+   ESTILOS DE BLOQUE DE CLASE
    ========================================= */
 
-/* Contenedor para cada clase (Flexbox para alinear icono y texto) */
 .class-block {
     margin-bottom: 1.5rem;
     display: flex; 
     align-items: flex-start;
 }
 
-/* Contenedor del icono: Se mantiene en px para tamaño de imagen específico */
 .icon-container {
     width: 40px; 
     flex-shrink: 0;
@@ -95,7 +88,6 @@ body {
     height: 40px;
 }
 
-/* TÍTULO DE CLASE (h3) */
 .class-text h3 {
     font-size: 1.2rem;
     font-weight: bold;
@@ -105,7 +97,6 @@ body {
     margin-bottom: 0.4rem;
 }
 
-/* Párrafo de la descripción de la clase */
 .class-text p {
     text-indent: 1.5rem;
     margin: 0.4rem 0;
@@ -113,7 +104,6 @@ body {
     font-size: 1rem;
 }
 
-/* Lista de subclases (ul) */
 .class-text ul {
     list-style-type: none;
     padding-left: 0;
@@ -201,29 +191,49 @@ footer a {
 
 
 /* =========================================
-   MEDIA QUERY: RESPONSIVIDAD PARA MÓVILES
+   ESTILOS PARA EL DISPLAY DINÁMICO (NUEVO)
    ========================================= */
 
-/* Cuando el ancho de la pantalla sea menor a 600px */
+#class-details-display {
+    min-height: 100px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px dashed #800000;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 1rem;
+    line-height: 1.4;
+    transition: all 0.3s ease-in-out;
+}
+
+#class-details-display ul {
+    list-style-type: disc;
+    padding-left: 2rem;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+
+/* =========================================
+   MEDIA QUERY: RESPONSIVIDAD PARA MÓVILES (< 600px)
+   ========================================= */
+
 @media (max-width: 600px) {
     
-    /* Regresar el h1 a un tamaño fijo para que no sea excesivamente grande */
     .chapter-header h1 {
-        font-size: 2rem; /* Tamaño más manejable en móvil */
+        font-size: 2rem; 
         letter-spacing: 0.15rem;
     }
 
-    /* Eliminar el efecto flotante para que las columnas se apilen */
     .column-left,
     .column-right {
-        width: 100%; /* Ocupan todo el ancho disponible */
-        float: none; /* Desactivar el flotado */
+        width: 100%;
+        float: none;
         padding-left: 0;
         padding-right: 0;
     }
 
-    /* Ajustar el espaciado entre las secciones que ahora están apiladas */
     .column-left {
-        padding-bottom: 0; /* Eliminar el padding inferior de la columna izquierda para que quede pegada a la derecha */
+        padding-bottom: 0; 
     }
 }

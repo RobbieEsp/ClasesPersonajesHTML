@@ -2,11 +2,10 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Clases de Personaje</title>
     <meta name="description" content="Información sobre varias clases de personaje para juegos de rol.">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
@@ -281,7 +280,7 @@
 
             <label for="clase">Clase:</label>
             <select id="clase" name="clase_personaje">
-                <option value="" disabled selected>-- Selecciona tu Clase --</option>
+                <option value="inicio" disabled selected>-- Selecciona tu Clase --</option>
                 <option value="Barbaro">Bárbaro</option>
                 <option value="Bardo">Bardo</option>
                 <option value="Brujo">Brujo</option>
@@ -295,6 +294,10 @@
                 <option value="Paladin">Paladín</option>
                 <option value="Picaro">Pícaro</option>
             </select><br>
+
+            <div id="class-details-display">
+                <p>Selecciona una clase para ver su resumen.</p> 
+            </div>
 
             <button type="submit">
                 Enviar
@@ -310,5 +313,7 @@
             <a href="https://www.facebook.com/roberto.espinozamayorga" target="_blank">Visita mi Facebook</a> 
         </p>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
